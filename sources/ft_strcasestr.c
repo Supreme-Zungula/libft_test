@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcasestr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 15:53:32 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 15:12:50 by yzungula         ###   ########.fr       */
+/*   Created: 2018/05/21 11:43:34 by yzungula          #+#    #+#             */
+/*   Updated: 2018/05/21 13:32:06 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+char	*ft_strcasestr(const char *haystack, const char *needle)
 {
-	size_t	i;
+	char	*hay;
+	char	*nd;
 
-	dest = (char *)malloc(sizeof(char) * len);	
-	i = 0;
-	while(i < len && src[i] != '\0')
+	if (*needle == '\0')
+		return (haystack);
+	while ((*haystack)++ != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		*hay = ft_tolower(*haystack);
+		hay++;
 	}
-	dest[i] = '\0';
-	return(dest);
-}	
+	*hay = '\0';
+   while ((*needle)++ != '\0')
+   {
+	   *nd = ft_tolower(*needle);
+	   nd++;
+   }
+   *nd = '\0';
+	while (*hay != '\0')
+	{
+		if (ft_strcmp(hay, nd) == 0)
+			return (haystack);
+		hay++;
+		haystack++;
+	}
+	return (NULL);
+}

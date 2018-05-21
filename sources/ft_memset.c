@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 15:53:32 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 15:12:50 by yzungula         ###   ########.fr       */
+/*   Created: 2018/05/21 15:02:34 by yzungula          #+#    #+#             */
+/*   Updated: 2018/05/21 15:09:19 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	*ft_memset(void *str, int c, size_t len)
 {
 	size_t	i;
+	unsigned char *tmp_str;
 
-	dest = (char *)malloc(sizeof(char) * len);	
 	i = 0;
-	while(i < len && src[i] != '\0')
+	tmp_str = str;
+	while (i < len)
 	{
-		dest[i] = src[i];
+		tmp_str[i] = (unsigned char)c;
 		i++;
 	}
-	dest[i] = '\0';
-	return(dest);
-}	
+	return (str);
+}

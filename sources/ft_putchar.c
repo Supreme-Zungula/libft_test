@@ -6,13 +6,14 @@
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 11:31:45 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/18 14:56:59 by yzungula         ###   ########.fr       */
+/*   Updated: 2018/05/21 15:21:57 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(const char c)
 {
 	write(1, &c, 1);
 }

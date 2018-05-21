@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 15:53:32 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 15:12:50 by yzungula         ###   ########.fr       */
+/*   Created: 2018/05/21 12:51:49 by yzungula          #+#    #+#             */
+/*   Updated: 2018/05/21 13:08:26 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+int		ft_isalnum(int c)
 {
-	size_t	i;
-
-	dest = (char *)malloc(sizeof(char) * len);	
-	i = 0;
-	while(i < len && src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return(dest);
-}	
+	if (c >= '0' && c <= '9')
+		return (1);
+	else 
+		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+			return (1);
+	return (0);
+}

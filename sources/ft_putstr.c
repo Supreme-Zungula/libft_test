@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 15:53:32 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 15:12:50 by yzungula         ###   ########.fr       */
+/*   Created: 2018/05/21 11:37:07 by yzungula          #+#    #+#             */
+/*   Updated: 2018/05/21 11:42:50 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include<unistd.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	ft_putstr(const char *str)
 {
-	size_t	i;
-
-	dest = (char *)malloc(sizeof(char) * len);	
-	i = 0;
-	while(i < len && src[i] != '\0')
+	while (*str != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		write(1, *str, sizeof(*str));
+		str++;
 	}
-	dest[i] = '\0';
-	return(dest);
-}	
+}

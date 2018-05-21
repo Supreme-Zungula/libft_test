@@ -6,7 +6,7 @@
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 10:34:24 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/19 10:54:31 by yzungula         ###   ########.fr       */
+/*   Updated: 2018/05/21 09:31:01 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char	*ft_strncat(char *s1, char *s2, size_t n)
 
 	i = 0;
 	j = 0;
-	while(s1[i] != '\0')
+	while (s1[i] != '\0')
 		i++;
-	while(j <= n)
+	while (j <= n)
 	{
 		s1[i] = s2[j];
 		i++;
 		j++;
 	}
 	s1[i] = '\0';
-	return(s1);
+	return (s1);
 }

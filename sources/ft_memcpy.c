@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/18 15:53:32 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 15:12:50 by yzungula         ###   ########.fr       */
+/*   Created: 2018/05/21 15:35:13 by yzungula          #+#    #+#             */
+/*   Updated: 2018/05/21 16:30:55 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	*ft_memcpy(void *dest,const  void *src, size_t n)
 {
 	size_t	i;
+	void	*tmp_dest;
 
-	dest = (char *)malloc(sizeof(char) * len);	
-	i = 0;
-	while(i < len && src[i] != '\0')
+	i = 1;
+	tmp_dest = dest;
+	while (i <= n)
 	{
-		dest[i] = src[i];
+		tmp_dest = src;
+		tmp_dst++;
+		src++;
 		i++;
 	}
-	dest[i] = '\0';
-	return(dest);
-}	
+	return (dest);
+}
