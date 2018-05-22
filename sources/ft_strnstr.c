@@ -6,7 +6,7 @@
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 11:29:36 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 12:04:17 by yzungula         ###   ########.fr       */
+/*   Updated: 2018/05/22 15:09:25 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	if (*needle == '\0')
-		return (haystack);
+		return ((char *)haystack);
 	while (i < len)
 	{
-		if (ft_strcmp(haystack[i], needle) == 0)
-			return (haystack[i]);
+		if (ft_strcmp(&haystack[i], needle) == 0)
+			return ((char *)&haystack[i]);
 		i++;
 	}
-	return (NULL):
+	return (NULL);
 }

@@ -6,30 +6,25 @@
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 11:18:13 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/19 11:51:02 by yzungula         ###   ########.fr       */
+/*   Updated: 2018/05/22 14:00:29 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	char	c_char;
-	size_t	i;
-
-	c_char = c + '0';
-	i = 0;
-	if (c_char == '\0')
+	if (c == '\0')
 	{
-		while (s[i] != '\0')
-			i++;
-		return (s[i]);
+		while (*str != '\0')
+			str++;
+		return ((char *)str);
 	}
-	while (s[i] != '\0')
+	while (*str != '\0')
 	{
-		if (s[i] == c_char)
-			return (s[i]);
-		i++;
+		if (*str == c)
+			return ((char *)str);
+		str++;
 	}
 	return (NULL);
 }

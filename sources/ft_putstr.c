@@ -6,7 +6,7 @@
 /*   By: yzungula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 11:37:07 by yzungula          #+#    #+#             */
-/*   Updated: 2018/05/21 11:42:50 by yzungula         ###   ########.fr       */
+/*   Updated: 2018/05/22 14:29:05 by yzungula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 void	ft_putstr(const char *str)
 {
-	while (*str != '\0')
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		write(1, *str, sizeof(*str));
+		write(1, &str[i], sizeof(*str));
 		str++;
 	}
 }
